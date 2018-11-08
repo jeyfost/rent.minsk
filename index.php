@@ -89,6 +89,7 @@
         <div class="row" id="mobileMenuClose"><i class="fa fa-times" aria-hidden="true" onclick="closeMobileMenu()"></i></div>
         <div class="row text-center mobile mobileActive">Главная</div>
         <div class="row text-center mobile"><a href="/cars">Автомобили</a></div>
+        <div class="row text-center mobile"><a href="/rent">Сдать авто</a></div>
         <div class="row text-center mobile"><a href="/reviews">Отзывы</a></div>
         <div class="row text-center mobile"><a href="/contacts">Контакты</a></div>
     </div>
@@ -110,6 +111,12 @@
                             <div class="menuPoint" onmouseover="pointHover('carsLine', 'carsPointName', 1)" onmouseout="pointHover('carsLine', 'carsPointName', 0)">
                                 <div class="menuTopLine transition" id="carsLine"></div>
                                 <div class="menuPointName transition" id="carsPointName">Автомобили</div>
+                            </div>
+                        </a>
+                        <a href="/rent">
+                            <div class="menuPoint" onmouseover="pointHover('rentLine', 'rentPointName', 1)" onmouseout="pointHover('rentLine', 'rentPointName', 0)">
+                                <div class="menuTopLine transition" id="rentLine"></div>
+                                <div class="menuPointName transition" id="rentPointName">Сдать авто</div>
                             </div>
                         </a>
                         <a href="/reviews">

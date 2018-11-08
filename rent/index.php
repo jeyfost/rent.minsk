@@ -2,13 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: jeyfost
- * Date: 29.08.2018
- * Time: 13:51
+ * Date: 08.11.2018
+ * Time: 11:18
  */
 
     include("../scripts/connect.php");
 
-    $pageResult = $mysqli->query("SELECT * FROM rent_pages WHERE url = 'contacts'");
+    $pageResult = $mysqli->query("SELECT * FROM rent_pages WHERE url = 'rent'");
     $page = $pageResult->fetch_assoc();
 
 ?>
@@ -100,9 +100,9 @@
         <div class="row" id="mobileMenuClose"><i class="fa fa-times" aria-hidden="true" onclick="closeMobileMenu()"></i></div>
         <a href="/"><div class="row text-center mobile">Главная</div></a>
         <div class="row text-center mobile"><a href="/cars">Автомобили</a></div>
-        <div class="row text-center mobile"><a href="/rent">Сдать авто</a></div>
+        <div class="row text-center mobile mobileActive"><a href="/rent">Сдать авто</a></div>
         <div class="row text-center mobile"><a href="/reviews">Отзывы</a></div>
-        <div class="row text-center mobile mobileActive"><a href="/contacts">Контакты</a></div>
+        <div class="row text-center mobile"><a href="/contacts">Контакты</a></div>
     </div>
 
     <div class="menuInner transition">
@@ -125,9 +125,9 @@
                         </div>
                     </a>
                     <a href="/rent">
-                        <div class="menuPoint" onmouseover="pointInnerHover('rentLine', 'rentPointName', 1)" onmouseout="pointHover('rentLine', 'rentPointName', 0)">
-                            <div class="menuTopLine transition" id="rentLine"></div>
-                            <div class="menuPointName transition" id="rentPointName">Сдать авто</div>
+                        <div class="menuPoint">
+                            <div class="menuTopLine transition menuTopLineActive" id="rentLine"></div>
+                            <div class="menuPointName transition menuPointActive" id="rentPointName">Сдать авто</div>
                         </div>
                     </a>
                     <a href="/reviews">
@@ -137,9 +137,9 @@
                         </div>
                     </a>
                     <a href="/contacts">
-                        <div class="menuPoint">
-                            <div class="menuTopLine transition menuTopLineActive" id="contactsLine"></div>
-                            <div class="menuPointNameInner transition menuPointActive" id="contactsPointName">Контакты</div>
+                        <div class="menuPoint" onmouseover="pointInnerHover('contactsLine', 'contactsPointName', 1)" onmouseout="pointInnerHover('contactsLine', 'contactsPointName', 0)">
+                            <div class="menuTopLine transition" id="contactsLine"></div>
+                            <div class="menuPointNameInner transition" id="contactsPointName">Контакты</div>
                         </div>
                     </a>
                     <div class="clear"></div>
@@ -156,6 +156,22 @@
     </div>
 
     <div class="ndra-container">
+        <div class="section white text-center">
+            <span class='headerFont'>Сдать авто в аренду</span>
+            <br /><br />
+
+            <?php
+                $textResult = $mysqli->query("SELECT * FROM rent_text WHERE name = 'rent'");
+                $text = $textResult->fetch_assoc();
+
+                echo "
+                    <div class='wide custom'>".$text['text']."</div>
+                ";
+            ?>
+
+            <br />
+        </div>
+
         <div class="section grey text-center custom">
             <span class='headerFont'>Контактная информация</span>
             <br /><br />
@@ -169,37 +185,12 @@
                 <a class="transition" href="mailto:<?= CONTACT_EMAIL ?>"><i class="fa fa-envelope" aria-hidden="true"></i> <?= CONTACT_EMAIL ?></a>
             </div>
             <div class="clear"></div>
+            <br />
         </div>
 
-        <div class="section white text-center">
-            <span class='headerFont'>Свяжитесь с нами</span>
-            <br /><br />
-            <div class="container60">
-                <form id="contactForm" name="contactForm">
-                    <label for="nameInput">Ваше имя:</label>
-                    <br />
-                    <input id="nameInput" name="name" />
-                    <br /><br />
-                    <label for="emailInput">Ваш email:</label>
-                    <br />
-                    <input id="emailInput" name="email" />
-                    <br /><br />
-                    <label for="phoneInput">Ваш номер телефона:</label>
-                    <br />
-                    <input id="phoneInput" name="phone" />
-                    <br /><br />
-                    <label for="messageInput">Текст сообщения:</label>
-                    <br />
-                    <textarea id="messageInput" name="message" onkeydown="textAreaHeight(this)" style="width: 95%;"></textarea>
-                    <br /><br />
-                    <div class="g-recaptcha" data-sitekey="6LfPHW0UAAAAADw_T1d4VDqD0rAwvcjj1N6LEKA7"></div>
-                    <br />
-                    <center><button onclick="sendEmail()" class="button" id="messageButton">Отправить&nbsp;&nbsp;&nbsp;<i class="fa fa-share" aria-hidden="true"></i></button></center>
-                </form>
-            </div>
-        </div>
+        <div class="section white"></div>
 
-        <div class="section grey" id="map">
+        <div class="section white" id="map">
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A494e7881dba95d945b3e2fc3b6badc6fbad8dcf51d4c8bf29f9f855c3efc578b&amp;width=100%25&amp;height=440&amp;lang=ru_RU&amp;scroll=false"></script>
         </div>
     </div>

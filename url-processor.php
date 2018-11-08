@@ -127,6 +127,7 @@ $page = $pageResult->fetch_assoc();
         <div class="row" id="mobileMenuClose"><i class="fa fa-times" aria-hidden="true" onclick="closeMobileMenu()"></i></div>
         <a href="/"><div class="row text-center mobile">Главная</div></a>
         <div class="row text-center mobile <?php if($url[0] == "cars") {echo "mobileActive";} ?>"><a href="/cars">Автомобили</a></div>
+        <div class="row text-center mobile"><a href="/rent">Сдать авто</a></div>
         <div class="row text-center mobile"><a href="/reviews">Отзывы</a></div>
         <div class="row text-center mobile"><a href="/contacts">Контакты</a></div>
     </div>
@@ -148,6 +149,12 @@ $page = $pageResult->fetch_assoc();
                         <div class="menuPoint" <?php if($url[0] != "cars") {echo "onmouseover='pointInnerHover(\"carsLine\", \"carsPointName\", 1)' onmouseout='pointInnerHover(\"carsLine\", \"carsPointName\", 0)'";} ?>>
                             <div class="menuTopLine transition <?php if($url[0] == "cars") {echo "menuTopLineActive";} ?>" id="carsLine"></div>
                             <div class="menuPointNameInner transition <?php if($url[0] == "cars") {echo "menuPointActive";} ?>" id="carsPointName">Автомобили</div>
+                        </div>
+                    </a>
+                    <a href="/rent">
+                        <div class="menuPoint" onmouseover="pointHover('rentLine', 'rentPointName', 1)" onmouseout="pointHover('rentLine', 'rentPointName', 0)">
+                            <div class="menuTopLine transition" id="rentLine"></div>
+                            <div class="menuPointName transition" id="rentPointName">Сдать авто</div>
                         </div>
                     </a>
                     <a href="/reviews">
