@@ -124,7 +124,7 @@
                         </div>
                     </a>
                     <a href="/rent">
-                        <div class="menuPoint" onmouseover="pointInnerHover('rentLine', 'rentPointName', 1)" onmouseout="pointHover('rentLine', 'rentPointName', 0)">
+                        <div class="menuPoint" onmouseover="pointInnerHover('rentLine', 'rentPointName', 1)" onmouseout="pointInnerHover('rentLine', 'rentPointName', 0)">
                             <div class="menuTopLine transition" id="rentLine"></div>
                             <div class="menuPointName transition" id="rentPointName">Сдать авто</div>
                         </div>
