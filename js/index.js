@@ -35,7 +35,7 @@ $(window).on("scroll", function () {
 
             $("#mainPointName").css("color", "#333");
             $("#carsPointName").css("color", "#333");
-            $("#apartmentsPointName").css("color", "#333");
+            $("#rentPointName").css("color", "#333");
             $("#reviewsPointName").css("color", "#333");
             $("#contactsPointName").css("color", "#333");
         } else {
@@ -48,7 +48,7 @@ $(window).on("scroll", function () {
 
             $("#mainPointName").css("color", "#fff");
             $("#carsPointName").css("color", "#fff");
-            $("#apartmentsPointName").css("color", "#fff");
+            $("#rentPointName").css("color", "#fff");
             $("#reviewsPointName").css("color", "#fff");
             $("#contactsPointName").css("color", "#fff");
         }
