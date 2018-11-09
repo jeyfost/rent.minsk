@@ -23,6 +23,7 @@
 	<meta name="keywords" content="<?= $page['keywords'] ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="yandex-verification" content="2ed210a7a2d8c4bd" />
 
     <link rel="icon" type="image/png" href="/img/system/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/img/system/favicon-16x16.png" sizes="16x16" />
